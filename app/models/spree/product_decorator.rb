@@ -1,5 +1,7 @@
 module Spree
   Product.class_eval do
-    scope :published, -> { where(published: true) }
+    add_search_scope :published do
+      where(published: true)
+    end
   end
 end
